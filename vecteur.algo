@@ -1,0 +1,61 @@
+FUNCTION Vecteur(T1,T2 : ARRAY_OF INTEGER[]) : BOOLEAN
+VAR
+    i : INTEGER;
+    sum : INTEGER;
+BEGIN
+   FOR i FROM 1 TO T1.length  STEP 1  DO
+       sum = sum + T1[i]*T2[i]
+   END_FOR
+   IF (sum = 0) THEN
+       RETURN TRUE
+   ELSE
+       RETURN FALSE
+   END_IF
+END
+
+
+ALGORITHM PS
+VAR
+    U : ARRAY_OF INTEGER[] := [5,0,1];
+    V : ARRAY_OF INTEGER[] := [-1,0,5];
+    test : BOOLEAN;
+
+BEGIN
+
+IF (U.length <> V.length) THEN
+    Write("on ne peut pas calculer le produit scalaire");
+ELSE
+    test := Vecteur(U,V)
+    IF (test = TRUE) THEN
+        Write("Ortho");
+    ELSE
+        Write("Non Ortho");
+    END_IF
+END_IF
+
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END
